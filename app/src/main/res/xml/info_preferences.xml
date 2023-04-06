@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<Preference
+    android:key="terms"
+    app:title="@string/info_terms_and_conditions"
+    app:icon="@drawable/ic_baseline_terms_24"
+    app:fragment="it.uniba.pathway.SettingsActivity$InfoFragment$TermsFragment"
+    android:persistent="false"
+
+    app:allowDividerBelow="true"
+    app:allowDividerAbove="true"
+    />
+
+    <Preference
+        android:key="privacypolicy"
+        app:title="@string/info_privacy_policy"
+        app:icon="@drawable/ic_baseline_shield_24"
+        app:fragment="it.uniba.pathway.SettingsActivity$InfoFragment$PrivacyPolicyFragment"
+        android:persistent="false"
+
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        />
+
+    <Preference
+        app:key="appVersion"
+        app:selectable="false"
+        app:persistent="false"
+        app:iconSpaceReserved="false"
+
+        app:allowDividerBelow="true"
+        app:allowDividerAbove="true"
+        />
+</PreferenceScreen>

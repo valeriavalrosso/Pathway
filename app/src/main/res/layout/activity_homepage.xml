@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Homepage">
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="55dp"
+        tools:layout_editor_absoluteX="2dp" />
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <!-- barra di ricerca per le zone -->
+        <SearchView
+            android:id="@+id/search_bar"
+            android:queryHint="@string/cerca_zona"
+            android:background="@drawable/search_bg"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:iconifiedByDefault="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+
+            android:layout_marginStart="@dimen/search_bar_margin_left_right"
+            android:layout_marginTop="@dimen/search_bar_top_bottom_margin"
+            android:layout_marginEnd="@dimen/search_bar_margin_left_right"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <!-- button generico per il menu (modifica del percorso e aggiunta delle zone) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="@dimen/menu_right_margin"
+            android:layout_marginBottom="@dimen/menu_bottom_margin"
+            android:backgroundTint="@color/amber"
+            app:borderWidth="0dp"
+            android:clickable="true"
+
+            android:src="@drawable/ic_view_dashboard_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButtonSalva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="@dimen/menu_right_margin"
+            android:layout_marginBottom="@dimen/menu_bottom_margin"
+            android:backgroundTint="@color/cactus_light"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_check_24"
+
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+
+        <LinearLayout
+            android:id="@+id/layoutAggiuntaZone"
+            android:layout_width="@dimen/menu_buttons_layout_width"
+            android:layout_height="@dimen/menu_buttons_layout_height"
+            android:gravity="right|center_vertical"
+            android:layout_marginBottom="@dimen/menu_buttons_distance"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/floatingActionButton4"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <!-- etichetta per il button dell'aggiunta delle zone -->
+            <TextView
+                android:id="@+id/labelAggiuntaZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/text_button_distance"
+                android:text="@string/aggiungi_una_zona"
+
+                android:textColor="@color/supernova"
+                android:textSize="@dimen/text_menu_size"
+                app:layout_constraintRight_toLeftOf="@id/floatingActionButton6" />
+
+            <!-- button per l'aggiunta delle zone -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton6"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+                android:backgroundTint="@color/supernova"
+                app:borderWidth="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_edit_mainbutton"
+                android:layout_marginEnd="@dimen/menu_right_margin"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutModificaZone"
+            android:layout_width="@dimen/menu_buttons_layout_width"
+            android:layout_height="@dimen/menu_buttons_layout_height"
+            android:gravity="right|center_vertical"
+            android:layout_marginBottom="@dimen/menu_buttons_layout_distance"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/layoutAggiuntaZone"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <!-- etichetta per il button della modifica delle zone -->
+            <TextView
+                android:id="@+id/labelModificaZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/text_button_distance"
+                android:text="@string/modifica_zone"
+
+                android:textColor="@color/grandis"
+                android:textSize="@dimen/text_menu_size"
+                app:layout_constraintRight_toLeftOf="@id/floatingActionButton5" />
+
+            <!--button per la modifica del percorso delle zone -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/grandis"
+                app:borderWidth="0dp"
+                android:clickable="true"
+                android:src="@drawable/ic_edit_edit"
+                android:layout_marginEnd="@dimen/menu_right_margin"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layoutEsportaPercorso"
+            android:layout_width="@dimen/menu_buttons_layout_width"
+            android:layout_height="@dimen/menu_buttons_layout_height"
+            android:gravity="right|center_vertical"
+            android:layout_marginBottom="@dimen/menu_buttons_layout_distance"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/layoutModificaZone"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <!-- etichetta per il button della modifica delle zone -->
+            <TextView
+                android:id="@+id/labelEsportaPercorso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/text_button_distance"
+                android:text="@string/esporta_percorso"
+
+                android:textColor="@color/cherokee"
+                android:textSize="@dimen/text_menu_size"
+                app:layout_constraintRight_toLeftOf="@id/floatingActionButtonExport" />
+
+            <!--button per la modifica del percorso delle zone -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonExport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:backgroundTint="@color/frangipani"
+                app:borderWidth="0dp"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_file_download_24"
+                android:layout_marginEnd="@dimen/menu_right_margin"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="749dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:labelVisibilityMode="auto"
+        app:menu="@menu/bottom_menu" />
+
+
+</RelativeLayout>
+

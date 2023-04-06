@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listaDragDropLayout">
+
+
+    <!-- button per tornare alla lista delle opere (non modificabile) -->
+    <ImageButton
+        android:id="@+id/frecciaIndietroLista"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+
+        android:background="@null"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <!-- overlay in attesa del caricamento delle opere -->
+    <LinearLayout
+        android:id="@+id/layout_caricamento_opere_DD"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:background="@android:color/transparent"
+        android:animateLayoutChanges="true"
+        android:visibility="visible" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/icona_caricamento"
+            android:indeterminateTint="@color/supernova"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/testo_caricamento"
+            android:text="@string/caricamento_opere"
+            android:textSize="20sp"
+            android:textColor="@color/supernova"
+            android:textStyle="bold"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+    <!-- overlay in attesa del salvataggio delle modifiche -->
+    <LinearLayout
+        android:id="@+id/layout_aggiornamento_posizioni"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        android:elevation="20dp"
+        android:clickable="false"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/icona_salvataggio"
+            android:indeterminateTint="@color/supernova"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/testo_salvataggio"
+            android:text="@string/salvataggio_percorso"
+            android:textSize="20sp"
+            android:textColor="@color/supernova"
+            android:textStyle="bold"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
+    <!-- lista delle opere con proprietà di drag&drop -->
+    <it.uniba.pathway.CustomListView
+        android:id="@+id/listaOpereDragDrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:visibility="visible"
+        tools:listitem="@layout/opere_item" />
+
+
+
+    <!-- button per il salvataggio dell'ordine delle opere -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSalvaOrdinamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/menu_right_margin"
+        android:layout_marginBottom="@dimen/menu_bottom_margin"
+
+        android:clickable="true"
+        android:elevation="4dp"
+        android:src="@drawable/ic_baseline_check_24"
+        app:backgroundTint="@color/cactus_light"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</RelativeLayout>

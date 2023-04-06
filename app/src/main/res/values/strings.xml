@@ -1,0 +1,342 @@
+<resources>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+
+    <!-- inizio stringhe pagina login-->
+    <string name="PlaceholderNome">Email</string>
+    <string name="Nome">User name</string>
+    <string name="nomeMuseo">Museum name</string>
+    <string name="Password">Password</string>
+    <string name="Telefono">Telephone number</string>
+    <!-- fine stringhe pagina login-->
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+    <string name="login">Login</string>
+    <string name="scrittaPulsanteLogin">Login</string>
+    <string name="LoginCredentialsError">Invalid data</string>
+    <string name="EmailMancante">Email not found</string>
+    <string name="ExpiredToken">Please log in</string>
+    <string name="RecuperoPassword">Password recovery</string>
+    <string name="email">Enter email</string>
+    <string name="mailDiRecupero">Send recovery email</string>
+    <string name="CambioPassword">Change password</string>
+    <string name="nuovaPassword">New password</string>
+    <string name="telefonoErrato">Incorrect telephone number</string>
+    <string name="emailInvalida">Invalid email</string>
+    <string name="confermaNuovaPassword">Confirm new password</string>
+    <string name="passwordNonCoincidenti">The passwords are not equals</string>
+    <string name="campoMancante">Please fullfill all fields</string>
+    <string name="confermaCambioPassword">Change password</string>
+    <string name="OggettoMail">Change password ~ Pathway</string>
+    <string name="Contenuto" translatable="false">"Account password: "</string>
+    <string name="Contenuto2">If you want to change your password, select the following link and open it with our App: http://www.pathway.com/cambiopassword</string>
+    <string name="OggettoMailCambioPSW">Password changed successfully ~ Pathway</string>
+    <string name="ContenutoCambioPSW">The password change you performed on</string>
+    <string name="ContenutoCambioPSW2">was carried out successfully.</string>
+    <string name="ErroreInvioMail">Mail sending error</string>
+    <string name="InvioMail">Mail sent successfully</string>
+    <string name="PasswordDimenticata"><u>Forgot password?</u></string>
+    <string name="registrati">Sign in</string>
+    <string name="registrazione">Registration</string>
+
+
+    <string name="nuovoUtente">Are you a new user?</string>
+
+    <string name="Registrati"><u>Sign in</u></string>
+    <string name="accediCon">Or</string>
+    <string name="accedi_con_google">Sign in with Google</string>
+
+    <!--STRINGHE VALE-->
+
+    <string name="app_name">Pathway</string>
+    <string name="zona_1">Area 1</string>
+    <string name="zona_3">Area 3</string>
+    <string name="zona_2">Area 2</string>
+    <string name="zona_4">Area 4</string>
+    <string name="cerca_zona">Search area ...</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_bottom_bar">BottomBar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tf">tf</string>
+    <string name="ff">ff</string>
+    <string name="impostazioni">Settings</string>
+    <string name="home">Home</string>
+    <string name="scanner">Scanner</string>
+    <string name="title_activity_prova">Test</string>
+
+    <!--STRINGHE VALE-->
+    <string name="modifica_zone">Edit areas</string>
+    <string name="esporta_percorso">Export path</string>
+
+    <!--STRINGHE VALE-->
+
+    <!--STRINGHE ELI-->
+
+    <string name="cerca_opere">Search Artworks ...</string>
+    <string name="cerca_opera">Search Artwork ...</string>
+    <string name="aggiungi_opera">Add an Artwork</string>
+    <string name="nessuna_opera">There are no artworks in this area</string>
+    <string name="modifica_opere">Edit the artworks</string>
+    <string name="modifica_percorso">Edit the path</string>
+    <string name="salvataggio_percorso">Saving path...</string>
+    <string name="annulla_eliminazione">UNDO\nDELETION</string>
+    <string name="titolo_opera">Artwork title</string>
+    <string name="titolo_opera_non_inserito">Artwork title needed</string>
+    <string name="titolo_opera_esistente">Artwork already exists in the museum</string>
+    <string name="seleziona_zona_opera">Select area</string>
+    <string name="zona_non_selezionata">Select the artwork area</string>
+    <string name="descrizione_opera">Description of the artwork</string>
+    <string name="caricamento_opere">Loading artworks ...</string>
+    <string name="salvataggio_opera">Saving artwork...</string>
+    <string name="dialog_positive_button">OK</string>
+    <string name="dialog_negative_button">Cancel</string>
+    <string name="uscita_title">Are you sure you want to exit?</string>
+    <string name="uscita_message">By clicking OK, changes won\'t be saved</string>
+    <string name="salva_opere_title">Save artworks</string>
+    <string name="salva_opere_message">Are you sure you want to save the changes made to the artworks?</string>
+    <string name="salva_opere_message_eliminate">Are you sure you want to save the changes? Deleted artworks won\'t be accessible ANYMORE.</string>
+    <string name="salva_percorso_title">Save path</string>
+    <string name="salva_percorso_message">Are you sure you want to save the changes made to the path?</string>
+    <string name="eliminazione_title">Are you sure you want to delete the artwork?</string>
+    <string name="eliminazione_message">By clickin OK, the artwork will be deleted.</string>
+    <!--STRINGHE ELI-->
+
+    <!--STRINGHE GIO-->
+    <string name="zona">Area</string>
+    <string name="descrizione">Description</string>
+    <string name="titolo">Title</string>
+    <string name="todo">TODO</string>
+    <!--STRINGHE GIO-->
+
+    <!--STRINGHE OMER-->
+    <!--  Settings strings -->
+    <!-- Preference Titles -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="settings_change_password">Change password</string>
+    <string name="settings_profile">My profile</string>
+    <string name="settings_virtual_tour">Virtual Tour</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_info">Info</string>
+    <!-- Virtual Tour Preference -->
+    <string name="virtual_tour_dialog_error">Invalid URL link</string>
+    <string name="virtual_tour_toast_message_added">Link added successfully</string>
+    <string name="virtual_tour_toast_message_removed">Link removed</string>
+    <string name="virtual_tour_neutral_button_text">Test Link</string>
+    <string name="virtual_tour_cannot_test_empty_link">Missing link</string>
+    <string name="virtual_tour_dialog_message">Here you can add the link to the virtual tour of your museum and allow yours
+    visitors from "E-Culture Experience" to live a fantastic experience!</string>
+    <!-- Info Preference -->
+    <string name="info_terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="info_privacy_policy">Privacy Policy</string>
+    <string name="prova">insert datas in  DB</string>
+    <!-- Profile Preference -->
+    <string name="name">Museum name</string>
+    <string name="telephoneNumber">Telphone number</string>
+    <string name="province">Province</string>
+    <string name="city">City</string>
+    <string name="address">Address</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="vat_number">Vat Number</string>
+    <string name="discard_changes_dialog_title">Discard changes?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="save_changes_dialog_title">Save changes?</string>
+    <string name="remove_image">Remove profile picture</string>
+    <string name="edit_profile_image_title">Edit profile picture</string>
+    <string name="select_image">Select an image</string>
+    <string name="cannot_exit_edit_mode">Confirm or cancel changes before exiting edit mode</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="app_version">App version</string>
+    <string name="yourMuseum">Your Museum</string>
+    <string name="Logout">Logout
+    </string><string name="LogoutConfirmation">" Are you sure you want to log out?"</string>
+    <string name="exit">Exit</string>
+    <string name="oldPassword">Actual password</string>
+    <string name="newPassword">New password</string>
+    <string name="repeatNewPassword">Confirm password</string>
+    <string name="repeatNewPassword_error">" The new password fields do not match"</string>
+    <string name="oldPassword_error">Wrong password</string>
+    <string name="password_format_error">The password must contain at least 4 characters</string>
+    <string name="Password_non_presente_nel_Database">Password not present in the database</string>
+    <string name="missingInternet">No internet network, please try again later</string>
+    <string name="aggiungi_una_zona">Add an area</string>
+    <string name="salvare_modifiche">Do you want to save the changes?</string>
+    <string name="delete_edit">Are you sure you want to discard the changes?</string>
+    <string name="salva">SAVE</string>
+    <string name="missing_connection">Missing internet connection</string>
+    <string name="zona_eliminata">Deleted area</string>
+    <string name="zona_modificata_con_successo">Area changed successfully</string>
+    <string name="errore_modifica_zona">Error while editing: try again later</string>
+    <string name="nome_invalido">Please enter a valid name</string>
+    <string name="errore_recupero_opere">Error while retrieving the artworks</string>
+    <string name="errore_salvataggio_opera">Error while saving ...</string>
+    <string name="opera_salvata">Artwork saved!</string>
+    <string name="permesso_negato_fotocamera">Permission denied. It will not be possible to acquire from the camera</string>
+    <string name="immagine_inserita">" Image successfully inserted!"</string>
+    <string name="errore_inserimento_immagine">Error inserting image...</string>
+    <string name="Descrizione_troppo_lunga">Description too long</string>
+    <string name="generazione_percorso">Path generation</string>
+    <string name="generazione_percorso_2">You must allow access to the archive to be able to save the path in the Documents folder</string>
+    <string name="consenti">Allow</string>
+    <string name="nega">Deny</string>
+    <string name="permesso_negato_scrittura_file">Permission denied. It will not be possible to generate the pdf</string>
+    <string name="opere_mancanti">There are no works for this museum</string>
+    <string name="nome_Opera">Artwork name:</string>
+    <string name="zona_opera">Artwork area:</string>
+    <string name="percorso_creato">Path created</string>
+    <string name="percorso_non_creato">Path not created</string>
+    <string name="Percorso_pathway_pdf">Path_Pathway.pdf</string>
+    <string name="nome_museo_mancante">Museum name missing</string>
+    <string name="errore_server_catch">" Error requesting the server"</string>
+    <string name="inserita_con_successo">successfully uploaded</string>
+    <string name="errore_inserimento">Error while uploading: try again later</string>
+    <string name="errore_aggiornamento_lista">Error while updating</string>
+    <string name="scheda_tecnica">" Data sheet:"</string>
+    <string name="elimina_opera">Delete Artwork</string>
+    <string name="visita">Go to</string>
+    <string name="riprova">Try again</string>
+    <string name="nuova_zona">NEW AREA</string>
+    <string name="Inserisci_nome_zona">Enter name</string>
+    <string name="email_non_validata">Email non validata</string>
+    <string name="errore_controllo_mail">Error while checking email</string>
+    <string name="errore_inserimento_museo">Error while saving data</string>
+    <string name="nome_zona">Area name</string>
+    <string name="nuovo_nome_zona">NEW NAME</string>
+    <string name="inserire_nuovo_nome_zona">Insert a new name for the area</string>
+    <string name="eliminare_zona">Are you sure you want to delete the area?</string>
+    <string name="caricamento_zone">Loading areas...</string>
+    <string name="inserimento_zona">Area insertion...</string>
+    <string name="first">First</string>
+    <string name="error_modifica_visibilita">Error while changing the visibility</string>
+    <string name="error_eliminazione_opera">Error while deleting the artwork</string>
+    <string name="eliminazione_opera_title">Are you sure you want to delete the artwork?</string>
+    <string name="eliminazione_opera_postive_button">Delete artwork</string>
+    <string name="eliminazione_opera_negative_button">Cancel</string>
+    <string name="errore_accesso_archivio">I\'m sorry, I can\'t access to the file manager</string>
+    <string name="immagine_salvata_successo">Successfully saved the image</string>
+    <string name="richiesta_archivio_title">Storage</string>
+    <string name="richiesta_archivio_message">You\'ll need to allow access to device\'s storage</string>
+    <string name="richiesta_archivio_positive_button">Allow</string>
+    <string name="richiesta_archivio_negative_button">Deny</string>
+    <string name="apportare_modifiche">Now you can make changes</string>
+    <string name="modifica_titolo">Change Title</string>
+    <string name="annulla">Cancel</string>
+    <string name="modifica_zona">Change Area</string>
+    <string name="modifica_descrizione">Change Description</string>
+    <string name="modifiche_opera_successo">Successfully saved the changes!</string>
+    <string name="error_modifiche_opera">An error occurred while saving</string>
+    <string name="elimina">Delete</string>
+    <string name="modifiche_annullate">Changes canceled</string>
+    <string name="refresh_di_tutto">Refresh in progress</string>
+    <string name="codice_QR_non_valido">Qr code invalid</string>
+    <string name="errore_scan_QR">Error while scanning</string>
+    <string name="permesso_fotocamera_title">Camera</string>
+    <string name="permesso_fotocamera_message">You\'ll need to allow access to the camera to scan QR codes</string>
+    <string name="permesso_fotocamera_positive_button">Allow</string>
+    <string name="permesso_fotocamera_negative_button">Deny</string>
+    <string name="eliminazione_account_title">Are you sure you want to delete your account?</string>
+    <string name="eliminazione_account_message">Clicking DELETE, your account won\'t be accessible anymore.</string>
+    <string name="errore_recupero_dati_museo">Error while retrieving museum data</string>
+    <string name="elimina_account">DELETE ACCOUNT</string>
+    <string name="elimina_account_prova">You can\'t delete trial account</string>
+    <string name="Accesso_google">Login with google completed</string>
+    <string name="invio_Mail">Email sent</string>
+    <string name="permesso_negato">Permission Denied</string>
+    <string name="errore_invio_mail">Error while sending email</string>
+
+    <!--STRINGHE OMER-->
+
+
+
+</resources>

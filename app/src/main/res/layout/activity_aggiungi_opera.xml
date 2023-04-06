@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AggiungiOperaActivity">
+
+
+    <!-- button per tornare alla lista delle opere -->
+    <ImageButton
+        android:id="@+id/frecciaIndietro"
+        android:layout_width="@dimen/top_nav_buttons_dimens"
+        android:layout_height="@dimen/top_nav_buttons_dimens"
+        android:layout_marginStart="@dimen/top_nav_buttons_margins"
+        android:layout_marginTop="@dimen/top_nav_buttons_margins"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="true"
+
+        android:background="@null"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <!-- button per salvare l'opera -->
+    <ImageButton
+        android:id="@+id/salvaOpera"
+        android:layout_width="@dimen/top_nav_buttons_dimens"
+        android:layout_height="@dimen/top_nav_buttons_dimens"
+        android:layout_marginEnd="@dimen/top_nav_buttons_margins"
+        android:layout_marginTop="@dimen/top_nav_buttons_margins"
+
+        android:background="@null"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_save_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <!-- overlay in attesa del salvataggio dell'opera -->
+    <LinearLayout
+        android:id="@+id/layout_salvataggio_opera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        android:elevation="20dp"
+        android:clickable="false"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/icona_salvataggio"
+            android:indeterminateTint="@color/supernova"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/testo_salvataggio"
+            android:text="@string/salvataggio_opera"
+            android:textSize="20sp"
+            android:textColor="@color/supernova"
+            android:textStyle="bold"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frecciaIndietro"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@id/bottombar_aggiungi_opera"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" >
+
+            <!-- campo di testo per indicare il titolo dell'opera -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titoloOpera"
+                style="@style/AggiuntaOperaOutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/add_opera_fields_horizontal_margin"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/add_opera_fields_horizontal_margin"
+
+                android:focusedByDefault="false"
+                android:hint="@string/titolo_opera"
+
+                app:counterEnabled="true"
+                app:counterMaxLength="45"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titoloEditField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="45" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- dropdown menu per indicare la zona dell'opera da aggiungere -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/zonaOpera"
+                style="@style/AggiuntaOperaDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titoloOpera"
+                android:layout_marginStart="@dimen/add_opera_fields_horizontal_margin"
+                android:layout_marginTop="@dimen/add_opera_fields_vertical_distance"
+                android:layout_marginEnd="@dimen/add_opera_fields_horizontal_margin"
+
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                android:hint="@string/seleziona_zona_opera"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titoloOpera">
+
+                <AutoCompleteTextView
+                    android:id="@+id/nomeZonaOpera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layoutImmagineOpera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/zonaOpera"
+                android:layout_alignParentStart="true"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="@dimen/add_opera_fields_vertical_distance">
+
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/frameImmagine"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="@dimen/add_opera_fields_vertical_distance"
+                    app:cardElevation="0dp"
+                    android:layout_centerInParent="true"
+
+                    android:clickable="true"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/amber_dark" >
+
+
+                    <ImageView
+                        android:id="@+id/immagine"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:alpha="0.5"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/splash_image"/>
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="130dp"
+                    android:elevation="2dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/frameImmagine"
+                    app:layout_constraintEnd_toEndOf="@id/frameImmagine"
+                    app:layout_constraintStart_toStartOf="@id/frameImmagine"
+                    app:layout_constraintTop_toTopOf="@id/frameImmagine">
+
+                    <!-- button per scegliere una foto dell'opera dalla galleria  -->
+                    <ImageButton
+                        android:id="@+id/galleria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+
+                        android:background="@null"
+                        android:clickable="true"
+                        android:src="@drawable/ic_baseline_photo_library_24"
+                        app:tint="@color/amber_dark"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    <!-- button per scattare una foto dell'opera  -->
+                    <ImageButton
+                        android:id="@+id/fotocamera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@null"
+                        android:clickable="true"
+                        android:src="@drawable/ic_baseline_photo_camera_24"
+                        app:tint="@color/amber_dark"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+            <!-- campo di testo per indicare la descrizione dell'opera -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descrizione"
+                style="@style/AggiuntaOperaOutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutImmagineOpera"
+
+                android:layout_marginStart="@dimen/add_opera_fields_horizontal_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/add_opera_fields_horizontal_margin"
+
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                android:hint="@string/descrizione_opera"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutImmagineOpera">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/frameImmagineFullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:clickable="true"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/immagineFullscreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/splash_image"
+            android:background="@color/grey_nobel_60"
+            android:elevation="2dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+
+    </FrameLayout>
+
+
+
+
+    <!-- bottom navigation bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottombar_aggiungi_opera"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:labelVisibilityMode="auto"
+        app:menu="@menu/bottom_menu"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

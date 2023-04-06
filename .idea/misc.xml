@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Documentazioni e ppt degli altri/da consegnare/Pathway/app/src/main/res/layout-land/activity_main.xml" value="0.31040564373897706" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Documentazioni e ppt degli altri/da consegnare/Pathway/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout-land/activity_main.xml" value="0.40652557319223986" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout-land/activity_opera2.xml" value="0.23809523809523808" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_aggiungi_opera.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_bottom_bar.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_cambio_password.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_homepage.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_list_sorting.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_lista_sorting.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_logout_temporaneo_cancellare.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_main.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_opera.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_opera2.xml" value="0.48020833333333335" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_opere.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_qr_scan.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_recupero_password.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_registrazione.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/activity_registrazione_google.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/custom_dialog.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/layout/custom_grid_layout.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/xml/header_preferences.xml" value="0.28125" />
+        <entry key="..\:/Users/bello/Desktop/AndroidStudioProgetti/Lavora Qui/pathway_2.0/pathway/Pathway/app/src/main/res/xml/info_preferences.xml" value="0.28125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

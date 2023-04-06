@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/opereActivityLayout"
+    tools:context=".OpereActivity" >
+
+
+    <!-- button per tornare indietro -->
+    <ImageButton
+        android:id="@+id/frecciaIndietro"
+        android:layout_width="@dimen/top_nav_buttons_dimens"
+        android:layout_height="@dimen/top_nav_buttons_dimens"
+        android:layout_marginLeft="@dimen/top_nav_buttons_margins"
+        android:layout_marginTop="@dimen/top_nav_buttons_margins"
+
+        android:background="@null"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+
+    <!-- barra di ricerca per le opere -->
+    <SearchView
+        android:id="@+id/searchbar"
+        android:queryHint="@string/cerca_opere"
+        android:background="@drawable/search_bg"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:iconifiedByDefault="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"
+
+        android:layout_width="@dimen/search_bar_width"
+        android:layout_height="@dimen/search_bar_height"
+        android:layout_marginStart="@dimen/search_bar_margin_left_right"
+        android:layout_marginTop="@dimen/search_bar_top_bottom_margin"
+        android:layout_marginEnd="@dimen/search_bar_margin_left_right"
+        android:layout_marginBottom="@dimen/search_bar_top_bottom_margin"
+        app:layout_constraintBottom_toTopOf="@+id/listaOpere"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frecciaIndietro"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+    <TextView
+        android:id="@+id/nessunaOpera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="@string/nessuna_opera"
+        android:gravity="center" />
+
+
+
+    <!-- overlay in attesa del caricamento delle opere -->
+    <LinearLayout
+        android:id="@+id/layout_caricamento_opere"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:background="@android:color/transparent"
+        android:animateLayoutChanges="true"
+        android:visibility="visible" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:id="@+id/icona_caricamento"
+            android:indeterminateTint="@color/supernova"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/testo_caricamento"
+            android:text="@string/caricamento_opere"
+            android:textSize="20sp"
+            android:textColor="@color/supernova"
+            android:textStyle="bold"
+            android:alpha="255"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+
+
+    <!-- lista delle opere presenti nella zona selezionata -->
+    <ListView
+        android:id="@+id/listaOpere"
+        tools:listitem="@layout/opere_item"
+        android:visibility="visible"
+        android:elevation="2dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottombar_opere"
+        android:layout_marginBottom="57dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+
+    <!-- button generico per il menu (modifica del percorso, modifica delle opere e aggiunta delle opere) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabOpere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="@dimen/menu_right_margin"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/menu_bottom_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:backgroundTint="@color/amber"
+        app:borderWidth="0dp"
+        android:src="@drawable/ic_view_dashboard_edit"
+        android:elevation="4dp"
+        android:clickable="true" />
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutAggiuntaOpere"
+        android:layout_width="@dimen/menu_buttons_layout_width"
+        android:layout_height="@dimen/menu_buttons_layout_height"
+        android:gravity="right|center_vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/menu_buttons_distance"
+        app:layout_constraintBottom_toTopOf="@id/fabOpere"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:clickable="true"
+        android:visibility="gone" >
+
+        <!-- etichetta per il button dell'aggiunta delle opere -->
+        <TextView
+            android:id="@+id/labelAggiuntaOpere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_vertical"
+            app:layout_constraintRight_toLeftOf="@id/fabAggiuntaOpere"
+            android:layout_marginEnd="@dimen/text_button_distance"
+
+            android:textColor="@color/supernova"
+            android:textSize="@dimen/text_menu_size"
+            android:text="@string/aggiungi_opera" />
+
+        <!-- button per l'aggiunta delle opere -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAggiuntaOpere"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/menu_right_margin"
+
+            android:backgroundTint="@color/supernova"
+            app:borderWidth="0dp"
+            android:src="@drawable/ic_edit_mainbutton"
+            android:clickable="true" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/layoutModificaOpere"
+        android:layout_width="@dimen/menu_buttons_layout_width"
+        android:layout_height="@dimen/menu_buttons_layout_height"
+        android:gravity="right|center_vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/menu_buttons_layout_distance"
+        app:layout_constraintBottom_toTopOf="@id/layoutAggiuntaOpere"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:clickable="true"
+        android:visibility="gone" >
+
+        <!-- etichetta per il button della modifica delle opere -->
+        <TextView
+            android:id="@+id/labelModificaOpere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_vertical"
+            app:layout_constraintRight_toLeftOf="@id/fabModificaOpere"
+            android:layout_marginEnd="@dimen/text_button_distance"
+
+            android:textColor="@color/grandis"
+            android:textSize="@dimen/text_menu_size"
+            android:text="@string/modifica_opere" />
+
+        <!--button per la modifica del percorso delle opere -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabModificaOpere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/menu_right_margin"
+
+            android:backgroundTint="@color/grandis"
+            app:borderWidth="0dp"
+            android:src="@drawable/ic_edit_edit"
+            android:clickable="true" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutModificaPercorso"
+        android:layout_width="@dimen/menu_buttons_layout_width"
+        android:layout_height="@dimen/menu_buttons_layout_height"
+        android:gravity="right|center_vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/menu_buttons_layout_distance"
+        app:layout_constraintBottom_toTopOf="@id/layoutModificaOpere"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        android:clickable="true"
+        android:visibility="gone" >
+
+        <!-- etichetta per il button della modifica delle zone -->
+        <TextView
+            android:id="@+id/labelModificaPercorso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/text_button_distance"
+            android:text="@string/modifica_percorso"
+
+            android:textColor="@color/cherokee"
+            android:textSize="@dimen/text_menu_size"
+            app:layout_constraintRight_toLeftOf="@id/fabModificaPercorso" />
+
+        <!--button per la modifica del percorso delle zone -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabModificaPercorso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:backgroundTint="@color/frangipani"
+            app:borderWidth="0dp"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_format_list_numbered_rtl_24"
+            android:layout_marginEnd="@dimen/menu_right_margin"/>
+    </LinearLayout>
+
+
+
+    <!-- bottom navigation bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottombar_opere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:elevation="4dp"
+
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:labelVisibilityMode="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="415dp"
+
+        android:layout_height="810dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/bottom_navigation"
+        tools:layout_editor_absoluteX="2dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

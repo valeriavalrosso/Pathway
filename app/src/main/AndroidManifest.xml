@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="it.uniba.pathway">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Pathway"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".Generazione_Percorso"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Registrazione_Google"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Cambio_Password"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar">
+            <intent-filter android:label="Pathway ~ Cambio password">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:scheme="http"
+                    android:host="www.pathway.com"
+                    android:pathPrefix="/cambiopassword"
+                     />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Recupero_Password"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Registrazione"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Logout_temporaneo_cancellare"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".GestioneImmagine"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+
+        <!-- Activity Vale -->
+        <activity
+            android:name=".ActivityBottomBar"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Homepage"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+         <!-- Activity Vale -->
+
+        <!-- Activity Eli -->
+        <activity
+            android:name=".AggiungiOperaActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+
+        <activity
+            android:name=".OpereActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+
+        <activity
+            android:name=".ListSortingActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+
+        <!-- Activity Eli-->
+
+        <!-- Activity Gio-->
+
+        <activity
+            android:name=".Qr_scan"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Request_Camera"
+            android:exported="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+        <activity
+            android:name=".Request_Storage"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+
+        <activity
+            android:name=".OperaDettagliata"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".Opera2"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar">
+
+        </activity>
+        <!-- Activity Gio-->
+
+        <!-- Activity Omer-->
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.Pathway.NoActionBar"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Activity Omer-->
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Pathway.NoActionBar" />
+    </application>
+</manifest>

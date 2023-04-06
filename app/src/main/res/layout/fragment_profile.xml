@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/profileDetails"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp">
+        <ImageButton
+            android:id="@+id/editProfileBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_edit_edit"
+            app:tint="@color/grey"
+            android:elevation="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/saveChangesBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_baseline_save_24"
+            android:backgroundTint="@color/white"
+            android:layout_alignParentEnd="true"
+            android:elevation="10dp"
+            android:visibility="gone"/>
+
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:onClick="backBtnClick"
+            android:elevation="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/discardChangesBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_baseline_cancel_24"
+            android:backgroundTint="@color/white"
+            android:layout_alignParentStart="true"
+            android:elevation="10dp"
+            android:visibility="gone"/>
+
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/backBtn"
+            android:layout_marginBottom="57dp"
+            android:elevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profileCard"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="50dp"
+                    android:layout_marginTop="24dp">
+                    <ImageView
+                        android:id="@+id/edit_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_edit_edit"
+                        app:tint="@color/grey"
+                        android:visibility="gone"/>
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <RelativeLayout
+                    android:id="@+id/textFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/profileCard"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="24dp">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:hint="@string/name"
+                        android:minHeight="48dp" />
+
+
+                    <EditText
+                        android:id="@+id/telephoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/name"
+                        android:layout_marginTop="24dp"
+                        android:hint="@string/telephoneNumber" />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/telephoneNumber"
+                        android:layout_marginTop="24dp"
+                        android:hint="@string/address" />
+
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/address"
+                        android:layout_marginTop="24dp"
+                        android:hint="@string/city" />
+
+                    <EditText
+                        android:id="@+id/province"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/city"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_toStartOf="@id/postalCode"
+                        android:hint="@string/province" />
+
+                    <EditText
+                        android:id="@+id/postalCode"
+                        android:layout_width="144dp"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/city"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="24dp"
+                        android:hint="@string/postal_code" />
+
+                    <EditText
+                        android:id="@+id/vatNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@id/postalCode"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="48dp"
+                        android:hint="@string/vat_number" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/eliminaAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vatNumber"
+
+                        android:backgroundTint="@color/error"
+                        android:text="ELIMINA ACCOUNT"
+                        app:icon="@drawable/ic_edit_delete"
+                        android:onClick="deleteAccount" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

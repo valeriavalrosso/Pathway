@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="amber">#FFA000</color>
+    <color name="amber_light">#FFD149</color>
+    <color name="amber_dark">#C67100</color>
+    <color name="amber_dark_opaque">#99C67100</color>
+    <color name="cactus">#537A5A</color>
+    <color name="cactus_light">#80A987</color>
+    <color name="cactus_dark">#284E30</color>
+    <color name="black">#FF000000</color>
+    <color name="grey">#454854</color>
+    <color name="default_grey">#757575</color>
+    <color name="grey_nobel">#9E9E9E</color>
+    <color name="grey_nobel_60">#999999</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backgroundGP">#FFFFFFFF</color>
+    <color name="red">#BE4B26</color>
+    <color name="frangipani">#FFDA9D</color>
+    <color name="cherokee">#FFD184</color>
+    <color name="grandis">#FFC565</color>
+    <color name="supernova">#FFB333</color>
+    <color name="cardview">#FFFFFFFF</color>
+    <color name="cardviewhite">#FFFFFFFF</color>
+    <color name="cardviewblack">#FF000000</color>
+    <color name="error">#FF0000</color>
+    <color name="settings_bottombar_icon">#757575</color>
+    <color name="googletext">#7f7f7f</color>
+    <color name="googleBackGround">#FFFFFF</color>
+    <color name="opera_background">#FFFFFFFF</color>
+</resources>
+
+
+
+

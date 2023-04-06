@@ -1,0 +1,37 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <Preference
+            android:key="changePassword"
+            app:icon="@drawable/ic_baseline_key_24"
+            app:fragment="it.uniba.pathway.SettingsActivity$ChangePasswordFragment"
+            app:title="@string/settings_change_password" />
+
+        <Preference
+            android:key="VirtualTour"
+            app:icon="@drawable/ic_baseline_panorama_photosphere_24"
+            app:fragment="it.uniba.pathway.SettingsActivity$VTDialogFragment"
+            app:title="@string/settings_virtual_tour"
+
+
+            />
+
+        <ListPreference
+            app:icon="@drawable/ic_baseline_language_24"
+            app:title="@string/settings_language"
+            app:key="language"
+            app:defaultValue="en"
+
+
+            />
+
+        <Preference
+            android:key="info"
+            app:fragment="it.uniba.pathway.SettingsActivity$InfoFragment"
+            app:icon="@drawable/ic_baseline_info_24"
+            app:title="@string/settings_info"
+            app:persistent="false"
+
+            />
+
+</PreferenceScreen>

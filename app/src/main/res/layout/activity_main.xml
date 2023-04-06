@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/logoLoginRegistrazione"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/splash_image"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+
+
+            android:text="@string/login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/amber_dark"
+            android:textSize="34sp"
+            android:layout_marginEnd="227dp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/NomeUtente"
+            style="@style/loginTextInputBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+
+            android:hint="@string/PlaceholderNome"
+            android:textColorHint="@color/amber_dark_opaque"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Login"
+            app:startIconDrawable="@drawable/ic_baseline_email_24"
+            app:startIconTint="@color/icon_color_change"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoComplete"
+
+                app:layout_constraintTop_toBottomOf="@+id/Login"
+                tools:ignore="DuplicateClickableBoundsCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Password"
+            style="@style/loginTextInputBoxes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:hint="@string/Password"
+
+            android:textColorHint="@color/amber_dark_opaque"
+
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/icon_color_change"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Login"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:startIconTint="@color/icon_color_change"
+            android:layout_marginTop="80dp">
+
+            <!--app:endIconTint="@color/password_icon_color_change">-->
+
+            <!--startIconTint dirà all'icona sulla sinistra (inizio) cambiare colore in base ad una condizione-->
+            <!--endIconTint dirà all'icona sulla destra (fine) di cambiare colore in base ad una condizione-->
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/Login"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/reindirizzamentoHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/scrittaPulsanteLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registrati"
+            android:layout_marginTop="25dp"/>
+
+        <TextView
+            android:id="@+id/passwordDimenticata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="apriActivityRecuperoPassword"
+            android:text="@string/PasswordDimenticata"
+            android:textColor="@color/amber_dark"
+
+            app:layout_constraintEnd_toEndOf="@+id/reindirizzamentoHome"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/reindirizzamentoHome"
+            app:layout_constraintTop_toBottomOf="@+id/NomeUtente"
+            app:layout_constraintVertical_bias="0.7"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+            android:layout_marginTop="90dp"/>
+
+        <TextView
+            android:id="@+id/nuovoUtente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="apriActivityRegistrazione"
+            android:text="@string/nuovoUtente"
+            android:textColor="#757575"
+            app:layout_constraintEnd_toStartOf="@+id/registrati"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordDimenticata"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/registrati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="apriActivityRegistrazione"
+            android:text="@string/Registrati"
+            android:textColor="@color/amber_dark"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@id/nuovoUtente"
+            app:layout_constraintTop_toBottomOf="@id/passwordDimenticata"
+            android:layout_marginTop="15dp"/>
+
+
+        <TextView
+            android:id="@+id/oppureAccedi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accediCon"
+            android:textColor="@color/amber_dark"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reindirizzamentoHome"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/accediConGoogle"
+            android:layout_width="214dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/textview_bordi_arrotondati"
+            android:elevation="2dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="right|center"
+            android:paddingRight="10dp"
+            android:text="@string/accedi_con_google"
+            android:textAllCaps="true"
+
+            android:textColor="@color/googletext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/oppureAccedi" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="50dp"
+            android:layout_height="50.5dp"
+            android:layout_marginEnd="160dp"
+            android:backgroundTint="#FFFFFF"
+            app:cardCornerRadius="10px"
+            app:layout_constraintEnd_toEndOf="@+id/accediConGoogle"
+            app:layout_constraintStart_toStartOf="@+id/accediConGoogle"
+            app:layout_constraintTop_toTopOf="@+id/accediConGoogle"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/immagineGoogle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="15.5dp"
+                android:layout_marginTop="15.5dp"
+                android:background="@color/backgroundGP"
+                android:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_untitled" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/pulsanteProvami"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@+id/logoLoginRegistrazione"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.09"
+            app:srcCompat="@drawable/try_me_icon_borders" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
